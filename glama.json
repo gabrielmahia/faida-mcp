@@ -1,0 +1,67 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/1.0.0/server.json",
+  "name": "faida-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Kenya investment and capital markets \u2014 Treasury bonds, NSE equities, unit trusts, diaspora investment guide, IPO participation, financial literacy. 6 tools.",
+  "license": "MIT",
+  "author": {
+    "name": "Gabriel Mahia",
+    "email": "contact@aikungfu.dev"
+  },
+  "tools": [
+    {
+      "name": "treasury_bond_calculator",
+      "description": "Kenya Treasury bond yield calculator",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "nse_equities_guide",
+      "description": "Nairobi Securities Exchange guide",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "unit_trust_comparison",
+      "description": "Kenya unit trust fund comparison",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "diaspora_investment_guide",
+      "description": "Kenya diaspora investment options",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "nse_ipo_guide",
+      "description": "Kenya IPO participation guide",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "financial_literacy_kenya",
+      "description": "Kenya personal finance fundamentals",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      }
+    }
+  ]
+}
