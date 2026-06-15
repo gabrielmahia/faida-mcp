@@ -2,7 +2,7 @@
 from __future__ import annotations
 from typing import Optional
 from fastmcp import FastMCP
-mcp = FastMCP(name="faida-mcp", description="Kenya investment and capital markets guidance. DEMO data only.")
+mcp = FastMCP(name="faida-mcp", instructions="Kenya investment and capital markets guidance. DEMO data only.")
 
 @mcp.tool(name="treasury_bond_calculator", description="Kenya Treasury bond yield and return calculator. DEMO.")
 def treasury_bond_calculator(principal_kes: float, tenor_years: int = 10,
