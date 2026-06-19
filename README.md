@@ -1,5 +1,8 @@
 # faida-mcp
 
+[![faida-mcp Glama score](https://glama.ai/mcp/servers/gabrielmahia/faida-mcp/badges/score.svg)](https://glama.ai/mcp/servers/gabrielmahia/faida-mcp)
+
+
 > Kenya capital markets via MCP — Treasury bonds, NSE equities, unit trusts, diaspora investment
 
 [![PyPI](https://img.shields.io/badge/PyPI-v0.1.0-blue)](https://github.com/gabrielmahia/faida-mcp)
