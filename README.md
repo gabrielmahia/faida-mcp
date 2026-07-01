@@ -4,6 +4,14 @@
 [![smithery badge](https://smithery.ai/badge/@gabrielmahia/faida-mcp)](https://smithery.ai/server/@gabrielmahia/faida-mcp)
 
 
+---
+**Compatible with `claude-sonnet-5`** (released 2026-06-30) — Anthropic's most agentic
+Sonnet yet. Runs multi-step tool chains end-to-end without stopping short.
+Install: `pip install faida-mcp` · Use with any MCP client.
+
+---
+
+
 > Kenya capital markets via MCP — Treasury bonds, NSE equities, unit trusts, diaspora investment
 
 [![PyPI](https://img.shields.io/badge/PyPI-v0.1.0-blue)](https://github.com/gabrielmahia/faida-mcp)
