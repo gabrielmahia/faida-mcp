@@ -114,3 +114,7 @@ def financial_literacy_kenya(topic: Optional[str] = None) -> dict:
         matched = {k: v for k, v in TOPICS.items() if k in t or any(w in t for w in k.split("_"))}
         return {"source": "DEMO", "topic": topic, "guidance": matched or TOPICS}
     return {"source": "DEMO", "financial_literacy_topics": TOPICS}
+
+def main() -> None:
+    """Console entry point."""
+    mcp.run()

@@ -1,4 +1,5 @@
 # faida-mcp
+<!-- mcp-name: io.github.gabrielmahia/faida-mcp -->
 
 [![faida-mcp Glama score](https://glama.ai/mcp/servers/gabrielmahia/faida-mcp/badges/score.svg)](https://glama.ai/mcp/servers/gabrielmahia/faida-mcp)
 [![smithery badge](https://smithery.ai/badge/@gabrielmahia/faida-mcp)](https://smithery.ai/server/@gabrielmahia/faida-mcp)
