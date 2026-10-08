@@ -1,12 +1,18 @@
 """FaidaMCP — Kenya Investment and Capital Markets Tools (6 tools). All data DEMO."""
 from __future__ import annotations
+
 from typing import Optional
+
 from fastmcp import FastMCP
+
+# Annotations tell clients which tools are safe to auto-approve (read-only, no side effects).
+READ_ONLY = {"readOnlyHint": True, "idempotentHint": True, "openWorldHint": False}
+
 mcp = FastMCP(name="faida-mcp", instructions="Kenya investment and capital markets guidance. DEMO data only.")
 
-@mcp.tool(name="treasury_bond_calculator", description="Kenya Treasury bond yield and return calculator. DEMO.")
+@mcp.tool(name="treasury_bond_calculator", description="Kenya Treasury bond yield and return calculator. DEMO.", annotations=READ_ONLY)
 def treasury_bond_calculator(principal_kes: float, tenor_years: int = 10,
-                              coupon_rate_pct: Optional[float] = None) -> dict:
+                              coupon_rate_pct: float | None = None) -> dict:
     DEFAULT_RATES = {2: 13.5, 5: 14.2, 10: 14.8, 15: 15.1, 20: 15.5}
     rate = coupon_rate_pct or DEFAULT_RATES.get(tenor_years, 14.5)
     annual_coupon = principal_kes * rate / 100
@@ -23,8 +29,8 @@ def treasury_bond_calculator(principal_kes: float, tenor_years: int = 10,
             "minimum": "KES 50,000", "tax": "WHT 15% on interest for residents",
             "disclaimer": "DEMO — verify current yields at cbk.go.ke"}
 
-@mcp.tool(name="nse_equities_guide", description="Nairobi Securities Exchange guide for first-time investors. DEMO.")
-def nse_equities_guide(query: Optional[str] = None) -> dict:
+@mcp.tool(name="nse_equities_guide", description="Nairobi Securities Exchange guide for first-time investors. DEMO.", annotations=READ_ONLY)
+def nse_equities_guide(query: str | None = None) -> dict:
     GUIDE = {
         "account_setup":   "Open CDS account at NSE-licensed stockbroker. ID + KES 1,000 minimum.",
         "buy_process":     "Instruct broker (phone/app). Settlement T+3 days. Brokerage: 1.8–2.5% per trade.",
@@ -41,8 +47,8 @@ def nse_equities_guide(query: Optional[str] = None) -> dict:
         return {"source": "DEMO — nse.co.ke", "query": query, "information": matched or GUIDE}
     return {"source": "DEMO — nse.co.ke", "guide": GUIDE, "portal": "nse.co.ke"}
 
-@mcp.tool(name="unit_trust_comparison", description="Compare Kenya unit trust fund types and typical returns. DEMO.")
-def unit_trust_comparison(risk_profile: Optional[str] = "moderate") -> dict:
+@mcp.tool(name="unit_trust_comparison", description="Compare Kenya unit trust fund types and typical returns. DEMO.", annotations=READ_ONLY)
+def unit_trust_comparison(risk_profile: str | None = "moderate") -> dict:
     FUNDS = {
         "money_market": {"risk": "low", "typical_return_pct": 13.5, "liquidity": "T+1 (next day)",
                          "min_kes": 1000, "examples": ["CIC MMF", "Sanlam MMF", "ICEA Lion MMF"]},
@@ -64,8 +70,8 @@ def unit_trust_comparison(risk_profile: Optional[str] = "moderate") -> dict:
                 "tax": "Dividends and capital gains generally exempt in regulated schemes"}
     return {"source": "DEMO — RBA Kenya", "all_fund_types": FUNDS}
 
-@mcp.tool(name="diaspora_investment_guide", description="Investment options for Kenya diaspora. DEMO.")
-def diaspora_investment_guide(location: Optional[str] = None) -> dict:
+@mcp.tool(name="diaspora_investment_guide", description="Investment options for Kenya diaspora. DEMO.", annotations=READ_ONLY)
+def diaspora_investment_guide(location: str | None = None) -> dict:
     return {"source": "DEMO — CBK, NSE, Treasury", "diaspora_location": location,
             "options": [
                 {"name": "M-Akiba Retail Bond", "description": "CBK mobile-first Treasury bond via M-PESA",
@@ -84,7 +90,7 @@ def diaspora_investment_guide(location: Optional[str] = None) -> dict:
             "remittance_tip": "Use licensed money transfer operators. Report above USD 10,000 to CBK.",
             "cds_account": "Open CDS at cdsc.co.ke for equity purchases"}
 
-@mcp.tool(name="nse_ipo_guide", description="Kenya Initial Public Offering (IPO) participation guide. DEMO.")
+@mcp.tool(name="nse_ipo_guide", description="Kenya Initial Public Offering (IPO) participation guide. DEMO.", annotations=READ_ONLY)
 def nse_ipo_guide() -> dict:
     return {"source": "DEMO — NSE", "how_to_participate": [
                 "1. Monitor NSE announcements at nse.co.ke",
@@ -98,8 +104,8 @@ def nse_ipo_guide() -> dict:
             "min_allocation": "Usually KES 2,500–5,000 (varies per IPO)",
             "tip": "Safaricom IPO (2008) remains Kenya's largest. Future candidates: NTSA, KPLC privatisation."}
 
-@mcp.tool(name="financial_literacy_kenya", description="Kenya personal finance fundamentals and glossary. DEMO.")
-def financial_literacy_kenya(topic: Optional[str] = None) -> dict:
+@mcp.tool(name="financial_literacy_kenya", description="Kenya personal finance fundamentals and glossary. DEMO.", annotations=READ_ONLY)
+def financial_literacy_kenya(topic: str | None = None) -> dict:
     TOPICS = {
         "emergency_fund":  "3-6 months expenses in money market fund (liquid, earning ~13%). Before any investing.",
         "debt_first":      "Pay high-interest debt (credit cards 36%+, Fuliza 9% pm) before investing.",
