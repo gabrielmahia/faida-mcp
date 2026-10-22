@@ -1,6 +1,8 @@
 """FaidaMCP — Kenya Investment and Capital Markets Tools (6 tools). All data DEMO."""
 from __future__ import annotations
 
+from importlib.metadata import PackageNotFoundError
+from importlib.metadata import version as _pkg_version
 from typing import Annotated, Optional
 
 from fastmcp import FastMCP
@@ -9,7 +11,13 @@ from pydantic import Field
 # Annotations tell clients which tools are safe to auto-approve (read-only, no side effects).
 READ_ONLY = {"readOnlyHint": True, "idempotentHint": True, "openWorldHint": False}
 
-mcp = FastMCP(name="faida-mcp", instructions="Kenya investment and capital markets guidance. DEMO data only.")
+try:
+    _VERSION = _pkg_version("faida-mcp")
+except PackageNotFoundError:  # a source tree that was never installed
+    _VERSION = "0+unknown"
+
+
+mcp = FastMCP(name="faida-mcp", instructions="Kenya investment and capital markets guidance. DEMO data only.", version=_VERSION)
 
 @mcp.tool(name="treasury_bond_calculator", description="Estimate the gross coupon income and total return of a Kenyan Treasury bond from a principal, tenor and optional coupon. Use when someone asks roughly what a bond would pay. Interest is shown BEFORE the 15% withholding tax noted in the output, and the real-return estimate subtracts a fixed illustrative 6.5% inflation, not current inflation. coupon_rate_pct, including 0, is used as given; if omitted a sample-table rate is used for 2, 5, 10, 15 or 20 years and any other tenor gets a generic 14.5%, which rate_basis states. Returns the principal, tenor, rate, rate_basis, annual and total interest, total return, real return estimate, how to buy, the KES 50,000 minimum and tax. Indicative rates labelled DEMO: verify current yields at cbk.go.ke. Read-only; no side effects.", annotations=READ_ONLY)
 def treasury_bond_calculator(principal_kes: Annotated[float, Field(description="Amount invested in KES.")], tenor_years: Annotated[int, Field(description="Bond tenor in years (default 10); 2, 5, 10, 15 and 20 have sample rates.")] = 10,
