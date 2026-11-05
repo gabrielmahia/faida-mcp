@@ -1,7 +1,7 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/1.0.0/server.json",
   "name": "faida-mcp",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Kenya capital markets tools: Treasury bond calculator, NSE equities guide, unit trust comparison, diaspora investment, IPOs, financial literacy",
   "license": "MIT",
   "author": {
@@ -61,6 +61,16 @@
         "readOnlyHint": true,
         "destructiveHint": false,
         "idempotentHint": true
+      }
+    },
+    {
+      "name": "kenya_macro_indicators",
+      "description": "Get Kenya's inflation and interest rates for recent years from free official sources: annual inflation from the IMF (with the IMF's projections for the current and coming years marked as projections) and bank lending and deposit rates from the World Bank. Use when someone is weighing a loan, savings or investment and needs the real cost of money in Kenya, or a trend. Returns inflation by year with projections flagged, lending and deposit rates by year, the sources with their terms and the retrieval time; on a network or service failure it returns an error instead of figures. Read-only; contacts an external service.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
       }
     }
   ],

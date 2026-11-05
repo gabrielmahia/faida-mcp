@@ -23,7 +23,7 @@ pip install faida-mcp
 
 ## What it does
 
-6 MCP tools covering Kenya investment and capital markets. 1st world equivalent: **Fidelity / Schwab**.
+7 MCP tools covering Kenya investment and capital markets. 1st world equivalent: **Fidelity / Schwab**.
 
 | Tool | Description |
 |------|-------------|
@@ -33,6 +33,7 @@ pip install faida-mcp
 | `diaspora_investment_guide` | M-Akiba, REITs, NSE access for overseas investors |
 | `nse_ipo_guide` | How to participate in Kenya IPOs |
 | `financial_literacy_kenya` | 50/30/20 rule, compound interest, SACCO vs bank |
+| `kenya_macro_indicators` | Kenya inflation (IMF, projections flagged) and lending and deposit rates (World Bank) |
 
 ## Usage
 
@@ -65,6 +66,12 @@ All data in this server is **clearly labeled DEMO** where synthetic. Verify all 
 MIT © Gabriel Mahia | [AI-KungFU](https://github.com/gabrielmahia) | contact@aikungfu.dev
 
 > *Decision infrastructure for East Africa*
+
+## Live data
+
+- `kenya_macro_indicators`: Kenya's annual inflation (IMF, projections flagged) and lending and deposit rates (World Bank, CC BY 4.0).
+
+Each live answer names its source, attribution and retrieval time; if a service does not answer, the tool returns an error instead of a number. The other tools are unchanged.
 
 ## Part of the East Africa Coordination Stack
 
