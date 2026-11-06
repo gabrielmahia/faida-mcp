@@ -2,12 +2,8 @@
 <!-- mcp-name: io.github.gabrielmahia/faida-mcp -->
 
 [![faida-mcp Glama score](https://glama.ai/mcp/servers/gabrielmahia/faida-mcp/badges/score.svg)](https://glama.ai/mcp/servers/gabrielmahia/faida-mcp)
-[![smithery badge](https://smithery.ai/badge/@gabrielmahia/faida-mcp)](https://smithery.ai/server/@gabrielmahia/faida-mcp)
-
 
 Install: `pip install faida-mcp` · Use with any MCP client.
-
-
 
 > Kenya capital markets via MCP — Treasury bonds, NSE equities, unit trusts, diaspora investment
 
