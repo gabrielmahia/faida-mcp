@@ -1,4 +1,5 @@
 [project.urls]
+Issues = "https://github.com/gabrielmahia/faida-mcp/issues"
 Homepage = "https://github.com/gabrielmahia/faida-mcp"
 Repository = "https://github.com/gabrielmahia/faida-mcp"
 Documentation = "https://github.com/gabrielmahia/nairobi-stack"
@@ -12,7 +13,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "faida-mcp"
-version = "0.1.11"
+version = "0.1.12"
 description = "Kenya capital markets tools: Treasury bond calculator, NSE equities guide, unit trust comparison, diaspora investment, IPOs, financial literacy"
 classifiers = [
     "Development Status :: 4 - Beta",
