@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 type: software
 title: "faida-mcp"
 abstract: "Kenya capital markets tools: Treasury bond calculator, NSE equities guide, unit trust comparison, diaspora investment, IPOs, financial literacy"
-version: "0.1.12"
+version: "0.1.13"
 authors:
   - family-names: "Mahia"
     given-names: "Gabriel"
