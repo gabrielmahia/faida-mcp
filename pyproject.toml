@@ -13,7 +13,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "faida-mcp"
-version = "0.1.12"
+version = "0.1.13"
 description = "Kenya capital markets tools: Treasury bond calculator, NSE equities guide, unit trust comparison, diaspora investment, IPOs, financial literacy"
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -29,7 +29,7 @@ classifiers = [
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
-dependencies = ["fastmcp>=0.9"]
+dependencies = ["fastmcp>=4.1.4"]
 license-files = ["LICENSE"]
 
 [project.scripts]
